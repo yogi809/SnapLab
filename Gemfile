@@ -29,12 +29,16 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console', '>= 4.1.0'
-  gem 'rack-mini-profiler', '~> 2.0'
-  gem 'listen', '~> 3.3'
-  gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'listen', '~> 3.3'
+  gem 'rack-mini-profiler', '~> 2.0'
+  gem 'rails_best_practices'
+  gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false
+  gem 'rubocop-rails', require: false
+  gem 'spring'
+  gem 'web-console', '>= 4.1.0'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
