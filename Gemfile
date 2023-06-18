@@ -21,6 +21,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'rails-i18n'
 gem 'enum_help'
+gem 'slim-rails'
 
 group :development, :test do
   gem 'bullet'

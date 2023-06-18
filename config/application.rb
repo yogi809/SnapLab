@@ -51,6 +51,7 @@ module SnapLab
                        model_spec: true,
                        fixtures: true
       g.fixture_replacement :factory_bot, dir: 'spec/factories'
+      g.templete_engine = :slim
     end
   end
 end
