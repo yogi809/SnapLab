@@ -1,29 +1,24 @@
-h1 みんなの投稿
-pp
+.container
+  h1 みんなの投稿
+  p
 
-table
-  thead
-    tr
-      th User
-      th Title
-      th Description
-      th Image
-      th Actions
-  tbody
-    - @posts.each do |post|
+  table.table
+    thead
       tr
-        td = post.user.name
-        td = post.title
-        td = post.description
-        td
-          - if post.image.attached?
-            = image_tag post.image
-        td
-          - if post.user == current_user
-            = link_to 'Show', post
-            |
-            = link_to 'Edit', edit_post_path(post)
-            |
-            = link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }
-
-= link_to 'New Post', new_post_path
+        th ユーザー
+        th タイトル
+    tbody
+      - @posts.each do |post|
+        tr
+          td = post.user.name
+          td = post.title
+          td
+            - if post.image.attached?
+              = image_tag post.image
+          td
+            - if post.user == current_user
+              = link_to '詳細', post
+              |
+              = link_to '編集', edit_post_path(post)
+              |
+              = link_to '削除', post, method: :delete, data: { confirm: '削除しますか？' }

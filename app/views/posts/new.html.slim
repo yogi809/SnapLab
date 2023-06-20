@@ -1,26 +1,28 @@
-h1 New Post
+.container.mt-5
+  .row.justify-content-center
+    .col-lg-6
+      h1 新規投稿を作成
 
-= form_with model: @post, url: posts_path, local: true do |f|
-  div
-    = f.label :title
-    = f.text_field :title
+      = form_with model: @post, url: posts_path, local: true do |f|
+        .form-group
+          = f.label :タイトル
+          = f.text_field :title, class: "form-control"
 
-  div
-    = f.label :description
-    = f.text_area :description
+        .form-group
+          = f.label :詳細文
+          = f.text_area :description, class: "form-control"
 
-  div
-    = f.label :image
-    = f.file_field :image
+        .form-group
+          = f.file_field :image, class: "form-control-file"
 
-  div
-    = f.submit 'Create Post'
+        .form-group.text-center
+          = f.submit '投稿する', class: "btn btn-primary"
 
-= link_to 'Back', posts_path
+      = link_to '戻る', posts_path
 
-- if @post.errors.any?
-  div
-    h2 Errors
-    ul
-      - @post.errors.full_messages.each do |message|
-        li = message
+      - if @post.errors.any?
+        .mt-3
+          h2 Errors
+          ul
+            - @post.errors.full_messages.each do |message|
+              li = message

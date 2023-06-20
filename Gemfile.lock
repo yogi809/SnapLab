@@ -329,7 +329,7 @@ DEPENDENCIES
   annotate
   better_errors
   binding_of_caller
-  bootsnap (>= 1.4.4)
+  bootsnap
   bullet
   enum_help
   factory_bot_rails
