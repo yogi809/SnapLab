@@ -8,12 +8,9 @@ div
   strong Description:
   span = @post.description
 
-/div
-  strong Image:
-  - if @post.image.present?
-    = image_tag @post.image.url, height: '300'
-  - else
-    | No image available
+div
+  - if @post.image.attached?
+  = image_tag @post.image
 
 = link_to 'Edit', edit_post_path(@post)
 |

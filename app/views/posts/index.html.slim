@@ -12,7 +12,9 @@ table
       tr
         td = post.title
         td = post.description
-        /td = image_tag post.image.url, height: '100' if post.image.present?
+        td
+          - if post.image.attached?
+            = image_tag post.image
         td
           = link_to 'Show', post
           |
