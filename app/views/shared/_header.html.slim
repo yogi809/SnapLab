@@ -1,5 +1,7 @@
 .header
-  h1 SnapLab
-  nav
-    ul
-      li = link_to '投稿する', new_post_path
+  div.d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.mb-3.bg-white.border-bottom.shadow-sm
+    h5.my-0.mr-md-auto.font-weight-normal SnapLab
+    nav.my-2.my-md-0.mr-md-3
+      a.p-2.text-dark href="/posts" みんなの投稿
+      a.p-2.text-dark href="#" ポケモン図鑑
+    a.btn.btn-outline-primary href="/posts/new" 投稿する
