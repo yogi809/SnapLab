@@ -1,0 +1,20 @@
+h1 Post Details
+
+div
+  strong Title:
+  span = @post.title
+
+div
+  strong Description:
+  span = @post.description
+
+/div
+  strong Image:
+  - if @post.image.present?
+    = image_tag @post.image.url, height: '300'
+  - else
+    | No image available
+
+= link_to 'Edit', edit_post_path(@post)
+|
+= link_to 'Back', posts_path
