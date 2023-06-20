@@ -1,10 +1,13 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :check_authorization, only: [:edit, :update, :destroy]
   def index
     @posts = Post.all
   end
 
   def show
     @post = Post.find(params[:id])
+    binding.pry
   end
 
   def new
@@ -44,5 +47,15 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :description, :image)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def check_authorization
+    unless @post.user == current_user
+      redirect_to posts_path, alert: '権限がありません。'
+    end
   end
 end
