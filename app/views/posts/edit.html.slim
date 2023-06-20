@@ -1,0 +1,19 @@
+h1 Edit Post
+
+= form_with model: @post, url: post_path(@post), method: :patch, local: true do |f|
+  div
+    = f.label :title
+    = f.text_field :title
+
+  div
+    = f.label :description
+    = f.text_area :description
+
+  div
+    = f.label :image
+    = f.file_field :image
+
+  div
+    = f.submit 'Update Post'
+
+= link_to 'Back', posts_path

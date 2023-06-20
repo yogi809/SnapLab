@@ -1,6 +1,6 @@
 h1 User Registration
 
-= form_with(model: @user, url: signup_path) do |form|
+= form_with(model: @user, url: users_path) do |form|
   - if @user.errors.any?
     .alert.alert-danger
       h4 Alert
