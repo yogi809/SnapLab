@@ -6,15 +6,15 @@ class UserSessionsController < ApplicationController
     @user = login(params[:email], params[:password])
 
     if @user
-      redirect_back_or_to(:posts, notice: 'Login successful')
+      redirect_back_or_to(:posts, notice: 'ログインしました')
     else
-      flash.now[:alert] = 'Login failed'
+      flash.now[:alert] = 'ログインに失敗しました'
       render action: 'new'
     end
   end
 
   def destroy
     logout
-    redirect_to(:posts, notice: 'Logged out!')
+    redirect_to(:posts, notice: 'ログアウトしました')
   end
 end

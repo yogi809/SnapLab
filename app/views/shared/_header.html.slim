@@ -4,4 +4,8 @@
     nav.my-2.my-md-0.mr-md-3
       a.p-2.text-dark href="/posts" みんなの投稿
       a.p-2.text-dark href="#" ポケモン図鑑
+      - if logged_in?
+        = link_to 'ログアウト', logout_path, method: :post
+      - else
+        = link_to 'ログイン', login_path
     a.btn.btn-outline-primary href="/posts/new" 投稿する
