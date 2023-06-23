@@ -1,12 +1,38 @@
 ja:
-  views:
-    user:
-      new:
-        title: "ユーザー登録"
-        form:
-          name: "名前"
-          email: "メールアドレス"
-          password: "パスワード"
-          submit: "登録する"
-        success: "ユーザーが登録されました。"
-        error: "エラーが発生しました。"
+  defaults:
+    login: 'ログイン'
+    register: '登録'
+    logout: 'ログアウト'
+  users:
+    new:
+      title: 'ユーザー登録'
+      to_login_page: 'ログインページへ'
+    create:
+      success: 'ユーザー登録が完了しました'
+      fail: 'ユーザー登録に失敗しました'
+  user_sessions:
+    new:
+      title: 'ログイン'
+      to_register_page: '登録ページへ'
+      password_forget: 'パスワードをお忘れの方はこちら'
+    create:
+      success: 'ログインしました'
+      fail: 'ログインに失敗しました'
+    destroy:
+      success: 'ログアウトしました'
+  posts:
+    index:
+      title: 'みんな投稿'
+    new:
+      title: '投稿作成'
+    create:
+      title: '投稿作成'
+      success: '投稿が作成されました'
+      fail: '投稿の作成に失敗しました'
+    edit:
+      title: '投稿編集'
+    update:
+      success: '投稿が更新されました'
+      fail: '投稿の更新に失敗しました'
+    destroy:
+      success: '投稿が削除されました'

@@ -4,11 +4,10 @@ class PostsController < ApplicationController
   before_action :check_authorization, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.includes(:user).order(created_at: :desc)
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def new
@@ -19,29 +18,28 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     @post.image.attach(params[:post][:image]) if params[:post][:image].present?
     if @post.save
-      redirect_to @post, notice: '投稿が作成されました'
+      redirect_to @post, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :new
     end
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to @post, notice: '投稿が更新されました'
+      redirect_to @post, success: t('.success')
     else
+      flash.now[:danger] = t('.fail')
       render :edit
     end
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_path, notice: '投稿が削除されました'
+    redirect_to posts_path, success: t('.success')
   end
 
   private

@@ -19,10 +19,3 @@
           = f.submit '投稿する', class: "btn btn-primary"
 
       = link_to '戻る', posts_path
-
-      - if @post.errors.any?
-        .mt-3
-          h2 Errors
-          ul
-            - @post.errors.full_messages.each do |message|
-              li = message
