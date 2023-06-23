@@ -25,6 +25,7 @@ ja:
   posts:
     index:
       title: 'みんな投稿'
+      no_result: '投稿がありません'
     new:
       title: '投稿作成'
     create:
