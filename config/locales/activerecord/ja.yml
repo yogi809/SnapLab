@@ -2,7 +2,7 @@ ja:
   activerecord:
     # User.model_name.human
     models:
-      user: 'ユーザー'
+      user: 'アカウント'
       post: '投稿'
     # User.human_attributes_name(:name)
     attributes:

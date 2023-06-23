@@ -5,13 +5,15 @@ ja:
     logout: 'ログアウト'
     message:
       require_login: 'ログインしてください'
+      created: '%{item}を作成しました'
+      not_created: '%{item}を作成できませんでした'
+      updated: '%{item}を更新しました'
+      not_updated: '%{item}を更新できませんでした'
+      destroyed: '%{item}を削除しました'
   users:
     new:
-      title: 'ユーザー登録'
+      title: 'アカウント登録'
       to_login_page: 'ログインページへ'
-    create:
-      success: 'ユーザー登録が完了しました'
-      fail: 'ユーザー登録に失敗しました'
   user_sessions:
     new:
       title: 'ログイン'
@@ -30,12 +32,5 @@ ja:
       title: '投稿作成'
     create:
       title: '投稿作成'
-      success: '投稿が作成されました'
-      fail: '投稿の作成に失敗しました'
     edit:
       title: '投稿編集'
-    update:
-      success: '投稿が更新されました'
-      fail: '投稿の更新に失敗しました'
-    destroy:
-      success: '投稿が削除されました'

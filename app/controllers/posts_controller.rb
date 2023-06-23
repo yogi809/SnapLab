@@ -16,11 +16,11 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    @post.image.attach(params[:post][:image]) if params[:post][:image].present?
+    @post.image.attach(params[:post][:image])
     if @post.save
-      redirect_to @post, success: t('.success')
+      redirect_to @post, success: t('defaults.message.created', item: Post.model_name.human)
     else
-      flash.now[:danger] = t('.fail')
+      flash.now['danger'] = t('defaults.message.not_created', item: Post.model_name.human)
       render :new
     end
   end
@@ -30,16 +30,16 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to @post, success: t('.success')
+      redirect_to @post, success: t('defaults.message.updated', item: Post.model_name.human)
     else
-      flash.now[:danger] = t('.fail')
+      flash.now['danger'] = t('defaults.message.not_updated', item: Post.model_name.human)
       render :edit
     end
   end
 
   def destroy
     @post.destroy
-    redirect_to posts_path, success: t('.success')
+    redirect_to posts_path, success: t('defaults.message.destroyed', item: Post.model_name.human)
   end
 
   private
