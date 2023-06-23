@@ -13,6 +13,5 @@ html
       = render 'shared/header'
     - else
       = render 'shared/before_login_header'
-    - if flash[:notice].present?
-      p.notice = flash[:notice]
+    = render 'shared/flash_message'
     = yield
