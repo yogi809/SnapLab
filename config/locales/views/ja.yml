@@ -10,6 +10,9 @@ ja:
       updated: '%{item}を更新しました'
       not_updated: '%{item}を更新できませんでした'
       destroyed: '%{item}を削除しました'
+  helpers:
+    submit:
+      create: '作成する'
   users:
     new:
       title: 'アカウント登録'
@@ -26,7 +29,7 @@ ja:
       success: 'ログアウトしました'
   posts:
     index:
-      title: 'みんな投稿'
+      title: 'みんなの投稿'
       no_result: '投稿がありません'
     new:
       title: '投稿作成'

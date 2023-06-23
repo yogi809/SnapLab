@@ -3,7 +3,7 @@
     = link_to root_path, class: 'navbar-brand' do
       | SnapLab
     nav.my-2.my-md-0.mr-md-3
-      = link_to 'みんなの投稿', posts_path, class: "p-2 text-dark"
+      = link_to t('posts.index.title'), posts_path, class: "p-2 text-dark"
       = link_to 'ポケモン図鑑', "#", class: "p-2 text-dark"
       = link_to (t 'defaults.login'), login_path, class: "p-2 text-dark"
-    = link_to '投稿する', new_post_path, class: "btn btn-outline-primary"
+    = link_to t('posts.new.title'), new_post_path, class: "btn btn-outline-primary"

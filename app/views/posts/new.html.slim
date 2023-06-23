@@ -1,21 +1,5 @@
-.container.mt-5
-  .row.justify-content-center
-    .col-lg-6
-      h1 新規投稿を作成
-
-      = form_with model: @post, url: posts_path, local: true do |f|
-        .form-group
-          = f.label :タイトル
-          = f.text_field :title, class: "form-control"
-
-        .form-group
-          = f.label :詳細文
-          = f.text_area :description, class: "form-control"
-
-        .form-group
-          = f.file_field :image, class: "form-control-file"
-
-        .form-group.text-center
-          = f.submit '投稿する', class: "btn btn-primary"
-
-      = link_to '戻る', posts_path
+.container
+  .row
+    .col-lg-8.offset-lg-2
+      h1= t('.title')
+      == render 'form', post: @post
