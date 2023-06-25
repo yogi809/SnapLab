@@ -2,7 +2,7 @@
   div.d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.mb-3.bg-white.shadow-sm
     h5.my-0.mr-md-auto.font-weight-normal SnapLab
     nav.my-2.my-md-0.mr-md-3
-      = link_to 'みんなの投稿', posts_path, class: "p-2 text-dark"
+      = link_to t('posts.index.title'), posts_path, class: "p-2 text-dark"
       = link_to 'ポケモン図鑑', "#", class: "p-2 text-dark"
       = link_to 'ログアウト', logout_path, method: :delete, class: "p-2 text-dark"
-    = link_to '投稿する', new_post_path, class: "btn btn-outline-primary"
+    = link_to t('posts.new.title'), new_post_path, class: "btn btn-outline-primary"

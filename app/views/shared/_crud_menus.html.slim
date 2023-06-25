@@ -1,0 +1,7 @@
+ul.crud-menu-btn.list-inline.float-right
+  li.list-inline-item
+    = link_to edit_post_path(post), class: 'pr-1' do
+      i.fas.fa-pen
+  li.list-inline-item
+    = link_to post_path(post), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'pr-1' do
+      i.fas.fa-trash
