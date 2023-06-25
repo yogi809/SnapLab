@@ -5,7 +5,7 @@
       .card-body
         h4.card-title
           = link_to post.title, post_path(post)
-        = render 'crud_menus', post: post if current_user && current_user.own?(post)
+        = render 'shared/crud_menus', post: post if current_user && current_user.own?(post)
         ul.list-inline
           li.list-inline-item
             = link_to user_path(post.user), class: 'pr-1' do

@@ -1,1 +1,15 @@
-h1 ユーザー詳細
+.container.pt-3
+  .row
+    .col-md-10.offset-md-1
+      table.table
+        tr
+          td= "#{@user.name} の投稿"
+
+.container.pt-3
+  .row
+    .col-12
+      .row
+        - if @user.posts.present?
+          = render @user.posts
+        - else
+          p= t('.no_result')
