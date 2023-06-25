@@ -17,6 +17,7 @@ ja:
       post:
         title: 'タイトル'
         description: '詳細文'
+        image: '画像'
 
   enums:
     user:

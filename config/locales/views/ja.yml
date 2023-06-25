@@ -12,7 +12,7 @@ ja:
       destroyed: '%{item}を削除しました'
   helpers:
     submit:
-      create: '作成する'
+      create: '投稿する'
   users:
     new:
       title: 'アカウント登録'
