@@ -5,11 +5,7 @@
       .card-body
         h4.card-title
           = link_to post.title, post_path(post)
-        div.mr10.float-right
-          = link_to post_path(post), method: :delete, data: { confirm: '本当に削除しますか？' }, class: 'pr-1' do
-            i.fas.fa-trash
-          = link_to edit_post_path(post), class: 'pr-1' do
-            i.fas.fa-pen
+        = render 'crud_menus', post: post
         ul.list-inline
           li.list-inline-item
             = link_to user_path(post.user), class: 'pr-1' do
