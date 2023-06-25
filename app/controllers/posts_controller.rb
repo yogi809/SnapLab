@@ -1,13 +1,12 @@
 class PostsController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :check_authorization, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.all.includes(:user).order(created_at: :desc)
   end
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def new
@@ -26,9 +25,11 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = current_user.posts.find(params[:id])
   end
 
   def update
+    @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
       redirect_to @post, success: t('defaults.message.updated', item: Post.model_name.human)
     else
@@ -38,6 +39,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = current_user.posts.find(params[:id])
     @post.destroy
     redirect_to posts_path, success: t('defaults.message.destroyed', item: Post.model_name.human)
   end
@@ -46,15 +48,5 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :description, :image)
-  end
-
-  def set_post
-    @post = Post.find(params[:id])
-  end
-
-  def check_authorization
-    unless @post.user == current_user
-      redirect_to posts_path, alert: '権限がありません。'
-    end
   end
 end
