@@ -3,6 +3,7 @@ ja:
     login: 'ログイン'
     register: '登録'
     logout: 'ログアウト'
+    post: '投稿'
     message:
       require_login: 'ログインしてください'
       created: '%{item}を作成しました'
@@ -37,3 +38,5 @@ ja:
       title: '投稿作成'
     edit:
       title: '投稿編集'
+    show:
+      title: '投稿詳細'
